@@ -26,7 +26,7 @@ async function fetchMessages() {
 }
 
 async function getMessages() {
-  let messages = await fetchmessages()
+  let messages = await fetchMessages()
   messagecontainer.innerHTML = ''
   messages.forEach(message => {
     let h3Tag = document.createElement('h3')
@@ -34,6 +34,13 @@ async function getMessages() {
     let imgTag = document.createElement('img')
     let infoDiv = document.createElement(`div`)
     let logbook = document.createElement('div')
+
+
+    h3Tag.textContent = name.form
+    h3Tag.setAttribute('class', 'name')
+    pTag.textContent = form.icon
+    imgTag.src = form.imgURL
+
 
     infoDiv.appendChild(h3Tag)
     infoDiv.appendChild(pTag)
